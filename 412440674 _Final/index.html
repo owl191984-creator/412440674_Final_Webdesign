@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>築跡・金門建設 | 傳承品質，構築現代生活美學</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Three.js (3D model) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══ CUSTOM CURSOR ══════════════════════════════ -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- ══ PRELOADER ══════════════════════════════════ -->
+  <div id="preloader">
+    <div class="preloader-logo">築跡・金門</div>
+    <div class="preloader-bar">
+      <div class="preloader-fill"></div>
+    </div>
+  </div>
+
+  <!-- ══ NAVIGATION ════════════════════════════════ -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">築跡・金門</a>
+    <ul class="nav-links">
+      <li><a href="#about">關於我們</a></li>
+      <li><a href="#projects">作品集錦</a></li>
+      <li><a href="#model-section">建築工法</a></li>
+      <li><a href="#map-section">建案地圖</a></li>
+      <li><a href="#news">最新消息</a></li>
+      <li><a href="#contact">聯絡我們</a></li>
+    </ul>
+    <button class="nav-cta" onclick="openAppt()">預約參觀</button>
+  </nav>
+
+  <!-- ══ HERO ══════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-bg" id="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">KINMEN CONSTRUCTION · EST. 1988</p>
+      <h1 class="hero-title">
+        傳承品質<br>
+        <em>構築現代</em><br>
+        生活美學
+      </h1>
+      <p class="hero-sub">
+        每一棟建築都是對生活品質的承諾。金門建設以三十餘年的精工實力，在台灣打造您的理想家園。
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn-primary">探索建案 →</a>
+        <a href="#model-section" class="btn-ghost">▶ 觀看建築工法</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">35+</span>
+        <span class="stat-label">年建設經驗</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">128</span>
+        <span class="stat-label">完工建案</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">12K+</span>
+        <span class="stat-label">幸福家庭</span>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span class="scroll-text">SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ══ ABOUT ══════════════════════════════════════ -->
+  <section id="about" class="reveal">
+    <div class="about-image-wrap">
+      <img class="about-img"
+        src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80"
+        alt="金門建設">
+      <img class="about-img-accent"
+        src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=500&q=80"
+        alt="建築細節">
+      <div class="about-badge">
+        <span class="badge-num">35</span>
+        <span class="badge-text">年精工傳承</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <p class="section-label">關於金門建設</p>
+      <h2 class="section-title">
+        不只是建設，<br>
+        而是打造<em style="color:var(--gold);font-style:normal">數位展覽館</em>
+      </h2>
+      <p>金門建設自1988年成立以來，秉持「品質第一、客戶至上」的核心理念，在台灣建設業界樹立了卓越的品牌形象。我們不只是在建造房屋，而是在構築每一個家庭的美好生活。</p>
+      <p>三十五年的積累，讓我們深知每一個細節對居住者的意義。從建材選用、工法執行到售後服務，我們對品質的堅持從未改變。</p>
+      <div class="about-values">
+        <div class="value-item">
+          <div class="value-title">精工工法</div>
+          <div class="value-desc">採用國際認證抗震結構，每道工序嚴格把關。</div>
+        </div>
+        <div class="value-item">
+          <div class="value-title">選材用料</div>
+          <div class="value-desc">精選國際一流建材，打造耐用且美觀的居住空間。</div>
+        </div>
+        <div class="value-item">
+          <div class="value-title">環境永續</div>
+          <div class="value-desc">符合綠建築標準，愛護環境從建築設計做起。</div>
+        </div>
+        <div class="value-item">
+          <div class="value-title">售後保障</div>
+          <div class="value-desc">提供十年建築保固，專業團隊隨時提供支援。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PROJECTS ═══════════════════════════════════ -->
+  <section id="projects">
+    <div class="inner">
+      <div class="projects-header reveal">
+        <div>
+          <p class="section-label">作品集錦</p>
+          <h2 class="section-title">精選建案</h2>
+        </div>
+        <div class="projects-filter">
+          <button class="filter-btn active" onclick="filterProjects('all', this)">全部</button>
+          <button class="filter-btn" onclick="filterProjects('complete', this)">完工案</button>
+          <button class="filter-btn" onclick="filterProjects('presale', this)">預售案</button>
+          <button class="filter-btn" onclick="filterProjects('luxury', this)">精品宅</button>
+        </div>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+
+        <div class="project-card large reveal" data-type="luxury"
+          onclick="openModal('築金苑','台北市大安區','2023','精品宅',
+            'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80',
+            '38~62坪','NT$3,500萬起')">
+          <img class="project-img"
+            src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80"
+            alt="築金苑">
+          <div class="project-overlay"><button class="project-view-btn">查看詳情</button></div>
+          <div class="project-info">
+            <span class="project-tag">精品豪宅 · 2023</span>
+            <div class="project-name">築金苑</div>
+            <div class="project-meta"><span>台北大安</span><span>38~62坪</span></div>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1" data-type="presale"
+          onclick="openModal('金門天璽','新北市板橋區','2024預售','預售案',
+            'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80',
+            '28~45坪','NT$2,100萬起')">
+          <img class="project-img"
+            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80"
+            alt="金門天璽">
+          <div class="project-overlay"><button class="project-view-btn">查看詳情</button></div>
+          <div class="project-info">
+            <span class="project-tag">預售案 · 2024</span>
+            <div class="project-name">金門天璽</div>
+            <div class="project-meta"><span>板橋</span><span>28~45坪</span></div>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2" data-type="complete"
+          onclick="openModal('礁溪行館','宜蘭縣礁溪鄉','2021','完工案',
+            'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80',
+            '42~68坪','NT$1,800萬起')">
+          <img class="project-img"
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80"
+            alt="礁溪行館">
+          <div class="project-overlay"><button class="project-view-btn">查看詳情</button></div>
+          <div class="project-info">
+            <span class="project-tag">完工案 · 2021</span>
+            <div class="project-name">礁溪行館</div>
+            <div class="project-meta"><span>宜蘭</span><span>42~68坪</span></div>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-3" data-type="complete"
+          onclick="openModal('大直聚','台北市中山區','2022','完工案',
+            'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80',
+            '22~35坪','NT$1,600萬起')">
+          <img class="project-img"
+            src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80"
+            alt="大直聚">
+          <div class="project-overlay"><button class="project-view-btn">查看詳情</button></div>
+          <div class="project-info">
+            <span class="project-tag">完工案 · 2022</span>
+            <div class="project-name">大直聚</div>
+            <div class="project-meta"><span>中山</span><span>22~35坪</span></div>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1" data-type="luxury"
+          onclick="openModal('信義帝景','台北市信義區','2024預售','精品宅',
+            'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=600&q=80',
+            '55~90坪','NT$6,800萬起')">
+          <img class="project-img"
+            src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=600&q=80"
+            alt="信義帝景">
+          <div class="project-overlay"><button class="project-view-btn">查看詳情</button></div>
+          <div class="project-info">
+            <span class="project-tag">精品豪宅 · 2024</span>
+            <div class="project-name">信義帝景</div>
+            <div class="project-meta"><span>信義</span><span>55~90坪</span></div>
+          </div>
+        </div>
+
+      </div><!-- /projects-grid -->
+    </div>
+  </section>
+
+  <!-- ══ 3D MODEL ═══════════════════════════════════ -->
+  <section id="model-section">
+    <div class="reveal">
+      <p class="section-label">建築工法</p>
+      <h2 class="section-title">互動式<br>3D 建築展示</h2>
+      <p style="font-size:0.9rem;color:rgba(255,255,255,0.45);line-height:1.8;margin-bottom:2rem;max-width:400px;">
+        隨著頁面滾動，體驗建築的每個面向。我們的抗震結構工法獲得國際認證，確保您的家園安全無虞。
+      </p>
+      <ul class="model-specs">
+        <li><span class="spec-key">結構工法</span><span class="spec-val">RC鋼筋混凝土 + 隔震層</span></li>
+        <li><span class="spec-key">耐震等級</span><span class="spec-val">5級以上</span></li>
+        <li><span class="spec-key">建材規格</span><span class="spec-val">日本進口高強度鋼材</span></li>
+        <li><span class="spec-key">綠建築認證</span><span class="spec-val">黃金級</span></li>
+        <li><span class="spec-key">智能系統</span><span class="spec-val">全棟IoT感測整合</span></li>
+      </ul>
+    </div>
+    <div id="canvas-container">
+      <canvas id="three-canvas"></canvas>
+      <div class="model-label">3D 結構示意圖 · 可拖曳旋轉</div>
+      <div class="model-controls">拖曳旋轉<br>滾輪縮放</div>
+    </div>
+  </section>
+
+  <!-- ══ MAP ════════════════════════════════════════ -->
+  <section id="map-section">
+    <p class="section-label reveal">建案地圖</p>
+    <h2 class="section-title reveal">探索建案<br>所在位置</h2>
+    <div class="map-layout">
+      <ul class="map-locations reveal">
+        <li class="map-loc-item" onclick="focusMap(25.033, 121.565)">
+          <span class="loc-num">01</span>
+          <div class="loc-info">
+            <div class="loc-name">築金苑</div>
+            <div class="loc-address">台北市大安區仁愛路四段</div>
+            <span class="loc-tag">精品豪宅</span>
+          </div>
+        </li>
+        <li class="map-loc-item" onclick="focusMap(25.014, 121.464)">
+          <span class="loc-num">02</span>
+          <div class="loc-info">
+            <div class="loc-name">金門天璽</div>
+            <div class="loc-address">新北市板橋區文化路</div>
+            <span class="loc-tag">預售中</span>
+          </div>
+        </li>
+        <li class="map-loc-item" onclick="focusMap(24.673, 121.771)">
+          <span class="loc-num">03</span>
+          <div class="loc-info">
+            <div class="loc-name">礁溪行館</div>
+            <div class="loc-address">宜蘭縣礁溪鄉礁溪路</div>
+            <span class="loc-tag">已完工</span>
+          </div>
+        </li>
+        <li class="map-loc-item" onclick="focusMap(25.072, 121.534)">
+          <span class="loc-num">04</span>
+          <div class="loc-info">
+            <div class="loc-name">大直聚</div>
+            <div class="loc-address">台北市中山區民權東路</div>
+            <span class="loc-tag">已完工</span>
+          </div>
+        </li>
+        <li class="map-loc-item" onclick="focusMap(25.036, 121.567)">
+          <span class="loc-num">05</span>
+          <div class="loc-info">
+            <div class="loc-name">信義帝景</div>
+            <div class="loc-address">台北市信義區松仁路</div>
+            <span class="loc-tag">預售中</span>
+          </div>
+        </li>
+      </ul>
+
+      <div id="google-map" class="reveal reveal-delay-2">
+        <iframe
+          id="map-iframe"
+          width="100%" height="100%"
+          style="border:0"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115206.42395702494!2d121.46540!3d25.03476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442afa09a2a46c1%3A0xa2f9e69fcc9bdfa0!2z5Y-w5YyX5biC!5e0!3m2!1szh-TW!2stw!4v1700000000000!5m2!1szh-TW!2stw">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ QUALITY ════════════════════════════════════ -->
+  <section id="quality">
+    <p class="section-label reveal">建築品質</p>
+    <h2 class="section-title reveal">每一個細節<br>都是對您的承諾</h2>
+    <div class="quality-grid">
+      <div class="quality-card reveal">
+        <span class="quality-icon">🏗</span>
+        <div class="quality-title">抗震工法</div>
+        <p class="quality-desc">採用國際認證隔震技術，建物抗震等級達5級，確保住戶居家安全不受地震威脅。</p>
+      </div>
+      <div class="quality-card reveal reveal-delay-1">
+        <span class="quality-icon">🪨</span>
+        <div class="quality-title">精選建材</div>
+        <p class="quality-desc">精選日本進口高強度鋼材、義大利進口大理石、德國頂級門窗系統，打造尊貴居所。</p>
+      </div>
+      <div class="quality-card reveal reveal-delay-2">
+        <span class="quality-icon">🌿</span>
+        <div class="quality-title">綠建築認證</div>
+        <p class="quality-desc">通過內政部黃金級綠建築認證，節能節水設計，讓您的生活與自然環境和諧共存。</p>
+      </div>
+      <div class="quality-card reveal reveal-delay-3">
+        <span class="quality-icon">🔬</span>
+        <div class="quality-title">品質管控</div>
+        <p class="quality-desc">三重品質把關機制，從設計、施工到驗收，每一道工序均有專業工程師全程監督。</p>
+      </div>
+      <div class="quality-card reveal reveal-delay-1">
+        <span class="quality-icon">🏡</span>
+        <div class="quality-title">智慧宅系統</div>
+        <p class="quality-desc">全棟IoT感測整合，智能門禁、環境監控、能源管理，讓科技為您的生活加分。</p>
+      </div>
+      <div class="quality-card reveal reveal-delay-2">
+        <span class="quality-icon">🛡</span>
+        <div class="quality-title">十年保固</div>
+        <p class="quality-desc">提供業界最完善的十年建築保固服務，專業維修團隊24小時待命，讓您住得安心。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ NEWS ═══════════════════════════════════════ -->
+  <section id="news">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end">
+      <div>
+        <p class="section-label reveal">最新消息</p>
+        <h2 class="section-title reveal">企業動態</h2>
+      </div>
+      <a href="#" style="font-size:0.8rem;color:var(--gold);letter-spacing:0.15em;text-decoration:none" class="reveal">
+        查看全部 →
+      </a>
+    </div>
+    <div class="news-grid">
+      <div class="news-card reveal">
+        <img class="news-img"
+          src="https://images.unsplash.com/photo-1448630360428-65456885c650?w=600&q=80"
+          alt="新聞">
+        <span class="news-tag">企業動態</span>
+        <div class="news-title">金門建設榮獲2024年台灣建設業品質金獎</div>
+        <div class="news-date">2024.11.15</div>
+      </div>
+      <div class="news-card reveal reveal-delay-1">
+        <img class="news-img"
+          src="https://images.unsplash.com/photo-1486591038519-8e15c6d91e4e?w=600&q=80"
+          alt="新聞">
+        <span class="news-tag">建案發布</span>
+        <div class="news-title">信義帝景預售公開 頂級豪宅再創新標竿</div>
+        <div class="news-date">2024.10.28</div>
+      </div>
+      <div class="news-card reveal reveal-delay-2">
+        <img class="news-img"
+          src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80"
+          alt="新聞">
+        <span class="news-tag">建築講座</span>
+        <div class="news-title">智慧住宅趨勢論壇 金門建設分享創新設計理念</div>
+        <div class="news-date">2024.10.10</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ════════════════════════════════════ -->
+  <section id="contact">
+    <p class="section-label reveal">聯絡我們</p>
+    <h2 class="section-title reveal">開啟您的<br>理想生活之旅</h2>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>我們期待與您相遇</h3>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.45);line-height:1.8;margin-bottom:2rem;">
+          無論您是首次購屋的新婚夫妻，還是尋求更好居住環境的成功人士，金門建設的專業顧問團隊都將為您提供最適切的建議。
+        </p>
+        <div class="contact-detail">
+          <span>總部地址</span><span>台北市信義區松仁路100號18樓</span>
+        </div>
+        <div class="contact-detail">
+          <span>服務電話</span><span>02-2345-6789</span>
+        </div>
+        <div class="contact-detail">
+          <span>電子信箱</span><span>service@kinmen-build.com.tw</span>
+        </div>
+        <div class="contact-detail">
+          <span>服務時間</span><span>週一至週六 09:00-18:00</span>
+        </div>
+        <div class="social-links">
+          <a class="social-link" href="#">f</a>
+          <a class="social-link" href="#">ig</a>
+          <a class="social-link" href="#">L</a>
+        </div>
+      </div>
+
+      <div class="contact-form reveal reveal-delay-2">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">姓名 NAME</label>
+            <input type="text" class="form-input" placeholder="王大明">
+          </div>
+          <div class="form-group">
+            <label class="form-label">電話 PHONE</label>
+            <input type="tel" class="form-input" placeholder="0912-345-678">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">電子信箱 EMAIL</label>
+          <input type="email" class="form-input" placeholder="example@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">感興趣的建案 PROJECT</label>
+          <select class="form-input" style="cursor:pointer">
+            <option value="">請選擇建案</option>
+            <option>築金苑</option>
+            <option>金門天璽（預售）</option>
+            <option>信義帝景（預售）</option>
+            <option>其他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">訊息內容 MESSAGE</label>
+          <textarea class="form-textarea" rows="4" placeholder="請描述您的需求或問題..."></textarea>
+        </div>
+        <button class="btn-submit" onclick="submitForm()">提交諮詢 SUBMIT</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══════════════════════════════════════ -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">築跡・金門</span>
+        <p class="footer-tagline">傳承品質，構築現代生活美學。三十五年如一日，以精工實力打造每一個家的夢想。</p>
+      </div>
+      <div class="footer-col">
+        <h4>關於我們</h4>
+        <ul>
+          <li><a href="#">品牌精神</a></li>
+          <li><a href="#">企業沿革</a></li>
+          <li><a href="#">專業團隊</a></li>
+          <li><a href="#">社會責任</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>建案資訊</h4>
+        <ul>
+          <li><a href="#">完工建案</a></li>
+          <li><a href="#">預售建案</a></li>
+          <li><a href="#">建築工法</a></li>
+          <li><a href="#">精選材料</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>客戶服務</h4>
+        <ul>
+          <li><a href="#" onclick="openAppt()">預約參觀</a></li>
+          <li><a href="#">售後修繕</a></li>
+          <li><a href="#">常見問題</a></li>
+          <li><a href="#">聯絡我們</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 金門建設股份有限公司 · 版權所有</span>
+      <span>隱私政策 | 使用條款 | 網站地圖</span>
+    </div>
+  </footer>
+
+  <!-- ══ ADMIN TOGGLE ════════════════════════════════ -->
+  <button id="admin-toggle" onclick="toggleAdmin()">⚙ 後台管理</button>
+
+  <!-- ══ ADMIN PANEL ═════════════════════════════════ -->
+  <div id="admin-panel">
+    <div class="admin-header">
+      <span class="admin-title">後台管理系統</span>
+      <button class="admin-close" onclick="toggleAdmin()">×</button>
+    </div>
+
+    <div class="admin-section-title">網站流量概覽</div>
+    <div class="stat-cards">
+      <div class="stat-card">
+        <span class="stat-card-val" id="visit-count">0</span>
+        <span class="stat-card-label">本月瀏覽次數</span>
+        <span class="stat-card-change">↑ 23.5%</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card-val" id="inquiry-count">0</span>
+        <span class="stat-card-label">本月諮詢數</span>
+        <span class="stat-card-change">↑ 12.8%</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card-val" id="appt-count">0</span>
+        <span class="stat-card-label">預約參觀數</span>
+        <span class="stat-card-change">↑ 8.3%</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card-val" id="download-count">0</span>
+        <span class="stat-card-label">資料下載數</span>
+        <span class="stat-card-change">↑ 31.2%</span>
+      </div>
+    </div>
+
+    <div class="admin-section-title">建案關注度</div>
+    <div class="chart-bar-wrap">
+      <div class="chart-row">
+        <span class="chart-label">築金苑</span>
+        <div class="chart-track"><div class="chart-fill" data-pct="82"></div></div>
+        <span class="chart-pct">82%</span>
+      </div>
+      <div class="chart-row">
+        <span class="chart-label">信義帝景</span>
+        <div class="chart-track"><div class="chart-fill" data-pct="71"></div></div>
+        <span class="chart-pct">71%</span>
+      </div>
+      <div class="chart-row">
+        <span class="chart-label">金門天璽</span>
+        <div class="chart-track"><div class="chart-fill" data-pct="59"></div></div>
+        <span class="chart-pct">59%</span>
+      </div>
+      <div class="chart-row">
+        <span class="chart-label">大直聚</span>
+        <div class="chart-track"><div class="chart-fill" data-pct="44"></div></div>
+        <span class="chart-pct">44%</span>
+      </div>
+      <div class="chart-row">
+        <span class="chart-label">礁溪行館</span>
+        <div class="chart-track"><div class="chart-fill" data-pct="38"></div></div>
+        <span class="chart-pct">38%</span>
+      </div>
+    </div>
+
+    <div class="admin-section-title">最近諮詢</div>
+    <div class="recent-list">
+      <div class="recent-item">
+        <span class="recent-name">王 ○○ · 築金苑</span>
+        <span class="recent-status">待回覆</span>
+        <span class="recent-time">剛剛</span>
+      </div>
+      <div class="recent-item">
+        <span class="recent-name">林 ○○ · 信義帝景</span>
+        <span class="recent-status">已回覆</span>
+        <span class="recent-time">2h前</span>
+      </div>
+      <div class="recent-item">
+        <span class="recent-name">陳 ○○ · 金門天璽</span>
+        <span class="recent-status">已回覆</span>
+        <span class="recent-time">5h前</span>
+      </div>
+      <div class="recent-item">
+        <span class="recent-name">吳 ○○ · 大直聚</span>
+        <span class="recent-status">已回覆</span>
+        <span class="recent-time">昨天</span>
+      </div>
+    </div>
+
+    <div class="admin-section-title" style="margin-top:1rem">快捷操作</div>
+    <div class="admin-btn-grid">
+      <button class="admin-btn-gold" onclick="alert('功能開發中')">新增建案</button>
+      <button class="admin-btn-gold" onclick="alert('功能開發中')">發布消息</button>
+      <button class="admin-btn-dim"  onclick="alert('功能開發中')">匯出報表</button>
+      <button class="admin-btn-dim"  onclick="alert('功能開發中')">系統設定</button>
+    </div>
+  </div>
+
+  <!-- ══ PROJECT MODAL ══════════════════════════════ -->
+  <div id="project-modal">
+    <div class="modal-backdrop" onclick="closeModal()"></div>
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <img class="modal-img" id="modal-img" src="" alt="">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem">
+        <div>
+          <span style="font-size:0.7rem;letter-spacing:0.25em;color:var(--gold)" id="modal-tag"></span>
+          <h2 style="font-family:'Noto Serif TC',serif;font-size:2rem;font-weight:300;margin-top:0.3rem" id="modal-name"></h2>
+        </div>
+        <button class="btn-primary" onclick="openAppt()" style="font-size:0.75rem;padding:0.8rem 1.8rem">預約參觀</button>
+      </div>
+      <div class="modal-grid">
+        <div><div class="modal-detail-label">地點</div><div class="modal-detail-val" id="modal-loc"></div></div>
+        <div><div class="modal-detail-label">年份</div><div class="modal-detail-val" id="modal-year"></div></div>
+        <div><div class="modal-detail-label">坪數</div><div class="modal-detail-val" id="modal-size"></div></div>
+        <div><div class="modal-detail-label">參考售價</div><div class="modal-detail-val" id="modal-price"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ APPOINTMENT MODAL ══════════════════════════ -->
+  <div id="appt-modal">
+    <div class="modal-backdrop" onclick="closeAppt()"></div>
+    <div class="appt-content">
+      <button class="modal-close" onclick="closeAppt()">×</button>
+      <h2 class="appt-title">預約參觀</h2>
+      <p class="appt-sub">填寫以下表單，我們的顧問將於24小時內與您聯繫安排參觀行程。</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">姓名</label>
+          <input type="text" class="form-input" placeholder="您的姓名">
+        </div>
+        <div class="form-group">
+          <label class="form-label">電話</label>
+          <input type="tel" class="form-input" placeholder="聯絡電話">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">偏好參觀時間</label>
+        <input type="datetime-local" class="form-input">
+      </div>
+      <div class="form-group">
+        <label class="form-label">感興趣的建案</label>
+        <select class="form-input">
+          <option>築金苑</option>
+          <option>金門天璽（預售）</option>
+          <option>信義帝景（預售）</option>
+        </select>
+      </div>
+      <button class="btn-submit" onclick="submitAppt()">確認預約</button>
+    </div>
+  </div>
+
+  <!-- ══ JS（放在 </body> 前，確保 DOM 已載入）══════ -->
+  <script src="main.js"></script>
+
+</body>
+</html>
